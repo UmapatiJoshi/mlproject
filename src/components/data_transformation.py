@@ -25,10 +25,9 @@ class DataTransformation:
         self.data_transformation_config = DataTransformationConfig()
 
     def get_data_transformer_object(self):
-        '''
-        This function si responsible for data trnasformation
-
-        '''
+        """
+        This function is responsible for data transformation
+        """
         try:
             numerical_columns = ["writing_score", "reading_score"]
             categorical_columns = [
@@ -43,7 +42,6 @@ class DataTransformation:
                 steps=[
                     ("imputer", SimpleImputer(strategy="median")),
                     ("scaler", StandardScaler())
-
                 ]
             )
 
@@ -119,7 +117,7 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path,
+                self.data_transformation_config.preprocessor_obj_file_path
             )
         except Exception as e:
             raise CustomException(e, sys)

@@ -5,4 +5,7 @@ sklearn
 dataclasses
 scikit-learn
 dill
+catboost
+xgboost
+Flask
 -e .
